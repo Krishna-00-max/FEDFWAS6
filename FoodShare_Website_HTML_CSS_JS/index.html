@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodShare - Share Food, Reduce Waste, Fight Hunger</title>
+  <meta name="description" content="FoodShare community food donation and request platform.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER / NAVBAR ===================== -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" data-page="home">
+        <span class="brand-mark">🌿</span>
+        <span><b>Food</b><strong>Share</strong><small>Share Food • Reduce Waste • Fight Hunger</small></span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+
+      <nav id="mainNav">
+        <a href="#home" data-page="home">Home</a>
+        <a href="#donor" data-page="donor">Donate</a>
+        <a href="#find" data-page="find">Find Food</a>
+        <a href="#request" data-page="request">Request Food</a>
+        <a href="#tracking" data-page="tracking">Track</a>
+        <a href="#dashboard" data-page="dashboard">Dashboard</a>
+        <a href="#about" data-page="about">About</a>
+        <a href="#contact" data-page="contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline" data-page="donor">Login</button>
+        <button class="btn btn-primary" data-page="donor">Sign Up</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================== 1. HOME PAGE ===================== -->
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">Community-driven food sharing platform</span>
+            <h1>Share Food.<br><span>Reduce Waste.</span><br>Fight Hunger.</h1>
+            <p class="lead">Connect surplus food with people and organizations in need. Every meal shared makes a difference.</p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary btn-large" data-page="donate">🍲 Donate Food</button>
+              <button class="btn btn-orange btn-large" data-page="find">🔎 Find Food</button>
+            </div>
+            <div class="hero-stats">
+              <div><b id="homeMeals">1,200+</b><span>Meals Shared</span></div>
+              <div><b>350+</b><span>Donors</span></div>
+              <div><b>40+</b><span>NGOs / Volunteers</span></div>
+              <div><b>10+</b><span>Cities</span></div>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="food-photo">
+              <img src="images/home.jpg.png" alt="FoodShare community sharing food" />
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="feature-row">
+          <div class="feature"><span>🌱</span><b>Save Food</b><small>Give surplus food a purpose</small></div>
+          <div class="feature"><span>👥</span><b>Help People</b><small>Connect food to communities</small></div>
+          <div class="feature"><span>❤️</span><b>Support Community</b><small>Make a positive impact</small></div>
+          <div class="feature"><span>🌍</span><b>Sustainable Future</b><small>Reduce avoidable waste</small></div>
+        </div>
+
+        <div class="mission-card">
+          <div>
+            <span class="section-tag">Our Mission</span>
+            <h2>Good food should feed people, not landfills.</h2>
+            <p>FoodShare makes it simple for restaurants, households, events and organizations to share safe surplus food with people who need it.</p>
+          </div>
+          <div class="mission-art">🤝<br><small>Together<br>We Can End Hunger</small></div>
+        </div>
+
+        <div class="sdg-strip">
+          <div><b>2</b><span>ZERO<br>HUNGER</span></div>
+          <div><b>12</b><span>RESPONSIBLE<br>CONSUMPTION</span></div>
+          <p>“Good Food Brings Better Tomorrows.”</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. DONOR REGISTRATION ===================== -->
+    <section id="donor" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 2</span>
+        <h1>Register as a Donor</h1>
+        <p>Join us to share surplus food and make a positive impact.</p>
+      </div>
+
+      <div class="container two-col">
+        <form class="card form-card" id="donorForm">
+          <h2>Donor Registration</h2>
+          <div class="form-grid">
+            <label>Full Name *<input required name="name" placeholder="Ravi Kumar"></label>
+            <label>Donor Type *
+              <select required name="type">
+                <option value="">Select type</option><option>Restaurant</option><option>Household</option>
+                <option>Hotel</option><option>Event Organizer</option><option>NGO</option><option>Other</option>
+              </select>
+            </label>
+            <label>Phone Number *<input required name="phone" type="tel" placeholder="9876543210"></label>
+            <label>Email<input name="email" type="email" placeholder="ravi@example.com"></label>
+            <label>Location *<input required name="location" placeholder="Vijayawada"></label>
+            <label>Address<textarea name="address" placeholder="MG Road, Benz Circle, Vijayawada"></textarea></label>
+          </div>
+          <label class="checkbox"><input required type="checkbox"> I agree to share accurate information.</label>
+          <button class="btn btn-primary full" type="submit">Register</button>
+          <div id="donorMsg" class="form-msg"></div>
+        </form>
+
+        <div class="illustration-card green">
+          <div class="big-icon">🏪</div>
+          <h2>Every meal can help someone.</h2>
+          <p>Restaurants, homes, caterers and events can register as donors and list safe surplus food for nearby requests.</p>
+          <div class="quote">“Good food should be shared, not wasted.”</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. DONATE FOOD ===================== -->
+    <section id="donate" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 3</span>
+        <h1>Donate Surplus Food</h1>
+        <p>Fill in the details of the food you want to donate.</p>
+      </div>
+
+      <div class="container two-col">
+        <form class="card form-card" id="donateForm">
+          <h2>Food Donation Details</h2>
+          <div class="form-grid">
+            <label>Food Name *<input required name="food" placeholder="Vegetable Rice"></label>
+            <label>Food Category *
+              <select required name="category">
+                <option>Vegetarian</option><option>Non-Vegetarian</option><option>Vegan</option>
+                <option>Bakery</option><option>Fruits</option><option>Other</option>
+              </select>
+            </label>
+            <label>Quantity (meals) *<input required name="quantity" type="number" min="1" placeholder="30"></label>
+            <label>Prepared Date & Time *<input required name="prepared" type="datetime-local"></label>
+            <label>Consume Before *<input required name="consume" type="datetime-local"></label>
+            <label>Pickup Location *<input required name="location" placeholder="Benz Circle, Vijayawada"></label>
+            <label>Contact Number *<input required name="phone" type="tel" placeholder="9876543210"></label>
+            <label>Additional Information<textarea name="info" placeholder="Freshly prepared. Kindly collect before 4 PM."></textarea></label>
+          </div>
+          <button class="btn btn-primary full" type="submit">🍲 Donate Food</button>
+          <div id="donateMsg" class="form-msg"></div>
+        </form>
+
+        <div class="info-panel">
+          <div class="food-bowl">🍚🥗</div>
+          <h2>Your surplus food can be someone's next meal.</h2>
+          <div class="check-list">
+            <p>✓ Mention accurate quantity</p>
+            <p>✓ Add a clear pickup location</p>
+            <p>✓ Share safe, edible food only</p>
+            <p>✓ Include the consume-before time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 4. FIND FOOD ===================== -->
+    <section id="find" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 4</span>
+        <h1>Find Available Food</h1>
+        <p>Search and request food from donors.</p>
+      </div>
+
+      <div class="container">
+        <div class="search-bar card">
+          <input id="foodSearch" placeholder="🔎 Search food (e.g. rice, idly, fruits...)">
+          <select id="categoryFilter"><option value="all">All Categories</option><option>Vegetarian</option><option>Bakery</option><option>Fruits</option></select>
+          <select id="locationFilter"><option value="all">All Locations</option><option>Vijayawada</option><option>Guntur</option><option>Mangalagiri</option></select>
+          <select id="statusFilter"><option value="all">Available</option><option>available">Available</option><option value="requested">Requested</option></select>
+          <button class="btn btn-primary" id="searchBtn">Search</button>
+        </div>
+
+        <div id="foodList" class="food-list"></div>
+      </div>
+    </section>
+
+    <!-- ===================== 5. REQUEST FOOD ===================== -->
+    <section id="request" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 5</span>
+        <h1>Request Food</h1>
+        <p>Fill in your details to request available food.</p>
+      </div>
+
+      <div class="container two-col">
+        <form class="card form-card" id="requestForm">
+          <h2>Food Request Form</h2>
+          <div class="form-grid">
+            <label>Your Name *<input required name="name" placeholder="Suresh"></label>
+            <label>Organization<input name="organization" placeholder="Helping Hands NGO"></label>
+            <label>Phone Number *<input required name="phone" type="tel" placeholder="9123456780"></label>
+            <label>Required Quantity (meals) *<input required name="quantity" type="number" min="1" placeholder="30"></label>
+            <label>Pickup Date & Time *<input required name="pickup" type="datetime-local"></label>
+            <label>Purpose<textarea required name="purpose" placeholder="Distribution to homeless people in Vijayawada"></textarea></label>
+          </div>
+          <button class="btn btn-primary full" type="submit">Submit Request</button>
+          <div id="requestMsg" class="form-msg"></div>
+        </form>
+
+        <div class="request-preview card">
+          <div class="request-food-image">🍛</div>
+          <div>
+            <span class="status available">Available</span>
+            <h2>Vegetable Rice</h2>
+            <p>30 meals | Vegetarian</p>
+            <p>📍 Benz Circle, Vijayawada</p>
+            <p>🕚 Today, 11:30 AM – 4:00 PM</p>
+          </div>
+          <hr>
+          <p class="muted">Select a food item from Find Food to pre-fill a request, or use the form on this page.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 6. DONATION STATUS TRACKING ===================== -->
+    <section id="tracking" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 6</span>
+        <h1>Track Donation Status</h1>
+        <p>Check the current status of your donation or request.</p>
+      </div>
+
+      <div class="container tracking-layout">
+        <div class="card timeline-card">
+          <div class="timeline">
+            <div class="timeline-item done"><span>✓</span><div><b>Donation Created</b><small>18-09-2026, 11:30 AM</small></div></div>
+            <div class="timeline-item done"><span>✓</span><div><b>Request Received</b><small>18-09-2026, 12:15 PM</small></div></div>
+            <div class="timeline-item current"><span>●</span><div><b>Food Collected</b><small>18-09-2026, 03:00 PM</small></div></div>
+            <div class="timeline-item"><span>+</span><div><b>Food Distributed</b><small>Pending</small></div></div>
+          </div>
+        </div>
+
+        <div class="card tracking-detail">
+          <div class="food-thumb">🍚</div>
+          <h2>Vegetable Rice</h2>
+          <p>30 meals | Vegetarian</p>
+          <p>📍 Benz Circle, Vijayawada</p>
+          <div class="current-status"><small>Current Status</small><strong id="trackingStatus">Collected</strong></div>
+          <button class="btn btn-primary" id="advanceTracking">Advance Demo Status</button>
+          <p class="thankyou">Thank you for making a difference! 💚</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 7. DASHBOARD ===================== -->
+    <section id="dashboard" class="page">
+      <div class="container page-head dashboard-head">
+        <div><span class="section-tag">Module 7</span><h1>Dashboard</h1><p>Overview of donations and impact.</p></div>
+        <label>Time Period <select id="periodSelect"><option>This Month</option><option>This Week</option><option>This Year</option></select></label>
+      </div>
+
+      <div class="container">
+        <div class="metric-grid">
+          <div class="metric green-m"><span>🍴</span><b id="totalDonations">25</b><small>Total Donations</small></div>
+          <div class="metric blue-m"><span>📦</span><b id="availableCount">8</b><small>Available</small></div>
+          <div class="metric orange-m"><span>🚚</span><b id="collectedCount">7</b><small>Collected</small></div>
+          <div class="metric purple-m"><span>👥</span><b>10</b><small>Distributed</small></div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="card chart-card">
+            <h2>Food Distribution Overview (Meals)</h2>
+            <div class="bar-chart">
+              <div class="bar-col"><span>8</span><i style="height:80%"></i><small>Available</small></div>
+              <div class="bar-col"><span>5</span><i style="height:50%"></i><small>Requested</small></div>
+              <div class="bar-col"><span>7</span><i style="height:70%"></i><small>Collected</small></div>
+              <div class="bar-col"><span>10</span><i style="height:100%"></i><small>Distributed</small></div>
+            </div>
+          </div>
+
+          <div class="impact-card card">
+            <div class="impact-row"><span>🍲</span><div><b>Total Meals Shared</b><strong id="mealsShared">620</strong></div></div>
+            <div class="impact-row"><span>👥</span><div><b>Estimated Beneficiaries</b><strong>480</strong></div></div>
+            <div class="impact-row"><span>🌍</span><div><b>Cities Reached</b><strong>10+</strong></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 8. AWARENESS / ABOUT ===================== -->
+    <section id="about" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 8</span>
+        <h1>Why FoodShare?</h1>
+        <p>Small actions can make a big impact.</p>
+      </div>
+
+      <div class="container">
+        <div class="why-grid">
+          <div class="why-card"><span>🌱</span><h3>Reduce Food Waste</h3><p>Redirect safe surplus food toward people who can use it.</p></div>
+          <div class="why-card"><span>👨‍👩‍👧‍👦</span><h3>Feed People in Need</h3><p>Connect donors with individuals, NGOs and community groups.</p></div>
+          <div class="why-card"><span>❤️</span><h3>Support Communities</h3><p>Build a culture of sharing and local support.</p></div>
+          <div class="why-card"><span>🌍</span><h3>Protect the Environment</h3><p>Less avoidable food waste means better resource use.</p></div>
+        </div>
+
+        <div class="awareness card">
+          <div>
+            <h2>Tips to Reduce Food Waste</h2>
+            <ul class="tips">
+              <li>Plan your meals before shopping.</li>
+              <li>Store food properly to keep it fresh longer.</li>
+              <li>Share surplus food instead of throwing it away.</li>
+              <li>Donate edible food before it reaches its consume-before time.</li>
+            </ul>
+          </div>
+          <div class="quote-box">“Small actions can make a big impact.”<br><small>Share food, spread hope.</small></div>
+        </div>
+
+        <div class="sdg-banner">
+          <b>🌎</b><span>A Greener, Healthier, Hunger-Free World<br><small>Starts with Us.</small></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 9. CONTACT / FEEDBACK ===================== -->
+    <section id="contact" class="page">
+      <div class="container page-head">
+        <span class="section-tag">Module 9</span>
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you.</p>
+      </div>
+
+      <div class="container two-col">
+        <form class="card form-card" id="contactForm">
+          <h2>Send Feedback</h2>
+          <label>Name *<input required name="name" placeholder="Krishna Bhargav"></label>
+          <label>Email *<input required name="email" type="email" placeholder="2500030358@gmail.com"></label>
+          <label>Message *<textarea required name="message" rows="6" placeholder="Great initiative! Keep going!"></textarea></label>
+          <button class="btn btn-primary full" type="submit">Send Message</button>
+          <div id="contactMsg" class="form-msg"></div>
+        </form>
+
+        <div class="contact-card card">
+          <div class="contact-illustration">🤝</div>
+          <h2>Get in Touch</h2>
+          <p>✉️ foodshare@example.com</p>
+          <p>📞 +91 91234 56789</p>
+          <p>📍 Vijayawada, Andhra Pradesh</p>
+          <hr>
+          <p><b>Together for a Hunger-Free Community.</b></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div><b class="footer-logo">🌿 FoodShare</b><p>Share Food • Reduce Waste • Fight Hunger</p></div>
+      <div><b>Quick Links</b><a href="#donate">Donate Food</a><a href="#find">Find Food</a><a href="#tracking">Track</a></div>
+      <div><b>Community</b><a href="#about">Awareness</a><a href="#contact">Contact</a><a href="#donor">Become a Donor</a></div>
+    </div>
+    <div class="footer-bottom">© 2026 FoodShare • “Good Food Should Feed People, Not Landfills.”</div>
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
